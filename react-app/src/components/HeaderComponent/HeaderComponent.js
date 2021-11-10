@@ -21,7 +21,12 @@ const HeaderComponent = ({ tasks, setTasks }) => {
   return (<header>
     <h1>ToDo List</h1>
     <div className='header'>
-      <TextField id="filled-basic" label="" variant="filled" value={text} onChange={(e) => setText(e.target.value)} />
+      <TextField 
+      id="filled-basic" 
+      label="" 
+      variant="filled" 
+      value={text} 
+      onChange={(e) => setText(e.target.value)} />
       <Button onClick={() => addNewTask()} variant="contained">Add Task</Button>
     </div>
   </header>)

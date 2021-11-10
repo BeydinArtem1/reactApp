@@ -5,22 +5,26 @@ import TaskComponent from './components/TaskComponent/TaskComponent';
 import './App.scss';
 
 const App = () => {
-
   const [tasks, setTasks] = useState([]);
- 
   useEffect(() => {
     axios.get('http://localhost:8000/allTasks').then(res => {
       setTasks(res.data.data);
     });
   }, []);
-  
 
   return (
     <div className='main'>
-     <HeaderComponent tasks={tasks} setTasks={setTasks} />
+      <HeaderComponent tasks={tasks} setTasks={setTasks} />
       <div className='content'>
         {
-          tasks.map((item, index) => <TaskComponent tasks={tasks} setTasks={setTasks} index={index} item={item} />)
+          tasks.map((item, index) =>
+            <TaskComponent
+              key={`task-${index}`}
+              tasks={tasks}
+              setTasks={setTasks}
+              index={index}
+              item={item}
+            />)
         }
       </div>
     </div>

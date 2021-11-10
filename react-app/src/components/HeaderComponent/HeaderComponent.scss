@@ -1,0 +1,42 @@
+header {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  h1 {
+    color: white;
+    font-family: 'Lobster', cursive;
+    font-size: 3.5em;
+  }
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  .css-cio0x1-MuiInputBase-root-MuiFilledInput-root {
+    background-color: white;
+   }
+   
+   .css-cio0x1-MuiInputBase-root-MuiFilledInput-root:hover {
+    background-color: white;
+    }
+   
+    .css-sghohy-MuiButtonBase-root-MuiButton-root {
+      padding: 15px 30px;
+      font-size: 0.96em;
+    }
+   
+    .css-10botns-MuiInputBase-input-MuiFilledInput-input {
+      padding-right: 50px;      
+    }
+   
+    .css-10botns-MuiInputBase-input-MuiFilledInput-input {
+     width: 25em;
+    }
+
+}
+
