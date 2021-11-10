@@ -1,0 +1,11 @@
+.textDiv {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+
+  p {
+    min-width: 89%;
+    text-align: center;
+    margin: 0;
+  }
+}

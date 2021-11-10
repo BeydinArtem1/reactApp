@@ -1,0 +1,18 @@
+ .main {
+   display: flex;   
+   align-items: center;
+   flex-direction: column;
+   background-image: url('../src/source/background.jpg');
+   height: 100vh;
+   width: 100%;
+   background-repeat: no-repeat;
+   background-size: cover;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      background-color: white;      
+      opacity: 0.8;
+      width: 40%;
+    }
+ }
