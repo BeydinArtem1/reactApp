@@ -6,11 +6,11 @@ import './InputComponent.scss';
 const InputComponent = ({ text, setText, setEdit, saveTask }) => {
   return (
     <div className='InputDiv'>
-      <input 
-      type='text'
-      className='edit-input'
-      value={text} 
-      onChange={(e) => setText(e.target.value)} 
+      <input
+        type='text'
+        className='edit-input'
+        value={text}
+        onChange={(e) => setText(e.target.value)}
       />
       <SaveAltIcon onClick={() => {
         setEdit(false);
