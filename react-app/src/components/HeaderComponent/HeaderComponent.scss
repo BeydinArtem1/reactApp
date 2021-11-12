@@ -29,7 +29,7 @@ header {
   }  
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1224px) {
   input {
     max-width: 20em;
   }
@@ -60,9 +60,7 @@ header {
 }
 
 @media (max-width: 375px) {
-  .header {
-    button {
-      width: 61%;
-    }
+  .header button {
+      width: 61%;    
   }
 }

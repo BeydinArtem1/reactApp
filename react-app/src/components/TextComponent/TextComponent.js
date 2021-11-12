@@ -6,15 +6,15 @@ import './TextComponent.scss';
 const TextComponent = ({ item, deleteTask, goToedit, setItem }) => {
   const { text, isCheck } = item;
   return (
-    <div className='textDiv'>
-      <p className={isCheck ? 'text-Checked' : 'text'} >{text}</p>     
+    <div className='textdiv'>
+      <p className={isCheck ? 'text-checked' : 'text'} >{text}</p>
       <EditIcon
         visibility={isCheck ? 'hidden' : 'visible'}
         onClick={() => {
-          setItem(item);          
-          goToedit(item);
-        }
-        } />      
+            setItem(item);
+            goToedit(item);
+          }
+        } />
       <DeleteOutlineIcon onClick={() => deleteTask()} />
     </div>)
 }

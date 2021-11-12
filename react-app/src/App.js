@@ -6,13 +6,12 @@ import {
   useHistory
 } from 'react-router-dom';
 import axios from 'axios';
-import HeaderComponent from './components/HeaderComponent/HeaderComponent';
-import TaskComponent from './components/TaskComponent/TaskComponent';
 import InputComponent from './components/InputComponent/InputComponent';
+import MainComponent from './components/MainComponent/MainComponent'
 import './App.scss';
 
 const App = () => {
-  const [items, setItem] = useState({});
+  const [item, setItem] = useState({});
   const [tasks, setTasks] = useState([]);
   const history = useHistory();
 
@@ -35,24 +34,16 @@ const App = () => {
       <h1>ToDo List</h1>
       <Switch>
         <Route path="/main">
-          <HeaderComponent tasks={tasks} setTasks={setTasks} />
-          <div className='content'>
-            {
-              tasks.sort((a, b) => (a.isCheck - b.isCheck)).map((item, index) =>
-                <TaskComponent
-                  key={`task-${index}`}                  
-                  setTasks={setTasks}
-                  index={index}
-                  item={item}
-                  goToedit={goToedit}
-                  setItem={setItem}
-                />)
-            }
-          </div>
+          <MainComponent
+            tasks={tasks}
+            setTasks={setTasks}
+            goToedit={goToedit}
+            setItem={setItem}
+          />
         </Route>
         <Route path="/edit/:id">
           <InputComponent
-            item={items}
+            item={item}
             setTasks={setTasks}
             goToTask={goToTask}
           />

@@ -37,9 +37,9 @@ const InputComponent = ({ item, setTasks, goToTask }) => {
         variant="contained"
         color="success"
         onClick={() => {
-          saveTask();
-          goToTask();
-        }
+            saveTask();
+            goToTask();
+          }
         }
       >
         Save
