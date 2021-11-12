@@ -1,15 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import axios from 'axios';
-import InputComponent from '../InputComponent/InputComponent';
 import TextComponent from '../TextComponent/TextComponent';
 import './TaskComponent.scss';
 
-const TaskComponent = ({ tasks, setTasks, index, item }) => {
-  const [edit, setEdit] = useState(false);
-  const [text, setText] = useState(item.text);
-
+const TaskComponent = ({ setTasks, index, item, goToedit, setItem }) => {
+  const { _id, isCheck } = item
   const changeCheckbox = async () => {
-    const { _id, isCheck } = item;
     await axios.patch('http://localhost:8000/updateTask', {
       _id,
       isCheck: !isCheck
@@ -18,19 +14,8 @@ const TaskComponent = ({ tasks, setTasks, index, item }) => {
     });
   }
 
-  const saveTask = async () => {
-    const { _id, isCheck } = item;
-    await axios.patch('http://localhost:8000/updateTask', {
-      _id,
-      text,
-      isCheck
-    }).then(res => {
-      setTasks(res.data.data);
-    });
-  }
-
   const deleteTask = async () => {
-    await axios.delete(`http://localhost:8000/deleteTask?_id=${tasks[index]._id}`).then(res => {
+    await axios.delete(`http://localhost:8000/deleteTask?_id=${_id}`).then(res => {
       setTasks(res.data.data);
     });
   }
@@ -39,22 +24,14 @@ const TaskComponent = ({ tasks, setTasks, index, item }) => {
     <div className='container'>
       <input
         type='checkbox'
-        checked={item.isCheck}
+        checked={isCheck}
         onChange={() => changeCheckbox(index)} />
-      {
-        edit
-          ? <InputComponent
-            text={text}
-            setText={setText}
-            setEdit={setEdit}
-            saveTask={saveTask}
-          />
-          : <TextComponent
-            item={item}
-            setEdit={setEdit}
-            deleteTask={deleteTask}
-          />
-      }      
+      <TextComponent
+        setItem={setItem}
+        item={item}
+        deleteTask={deleteTask}
+        goToedit={goToedit}
+      />
     </div>);
 }
 

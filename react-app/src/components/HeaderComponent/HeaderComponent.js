@@ -8,18 +8,22 @@ const HeaderComponent = ({ tasks, setTasks }) => {
   const [text, setText] = useState('');
 
   const addNewTask = async () => {
-    await axios.post('http://localhost:8000/createTask', {
-      text,
-      isCheck: false
-    }).then(res => {
+    if (text.trim()) {
+      await axios.post('http://localhost:8000/createTask', {
+        text,
+        isCheck: false
+      }).then(res => {
+        setText(''.trim());
+        tasks.push(res.data.data);
+        setTasks([...tasks]);
+      });
+    } else {
+      alert('this field is invalid');
       setText('');
-      tasks.push(res.data.data);
-      setTasks([...tasks]);
-    });
+    }    
   }
 
-  return (<header>
-    <h1>ToDo List</h1>
+  return (<header>    
     <div className='header'>
       <TextField
         id="filled-basic"

@@ -8,11 +8,26 @@
    background-repeat: no-repeat;
    background-size: cover;
 
+    h1 {
+      color: white;
+      font-family: 'Lobster', cursive;
+      font-size: 3.5em;
+    }
+
     .content {
       display: flex;
       flex-direction: column;
       background-color: white;      
       opacity: 0.8;
-      width: 40%;
+      width: 55%;
+      max-height: 60vh;
+      overflow-y: auto;
+      border-radius: 5px;
     }
  }
+
+ @media (max-width: 425px) {
+   .main .content {
+      width: 90%;    
+   } 
+}
