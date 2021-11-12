@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import './InputComponent.scss';
 
-const InputComponent = ({ item, setTasks, goToTask }) => {
+const InputComponent = ({ item, setTasks, goToMain }) => {
   const [text, setText] = useState(item.text);
   const { _id, isCheck } = item;
 
@@ -38,7 +38,7 @@ const InputComponent = ({ item, setTasks, goToTask }) => {
         color="success"
         onClick={() => {
             saveTask();
-            goToTask();
+            goToMain();
           }
         }
       >
@@ -46,7 +46,7 @@ const InputComponent = ({ item, setTasks, goToTask }) => {
       </Button>
       <Button
         variant="contained"
-        onClick={() => goToTask()}
+        onClick={() => goToMain()}
       >
         Back
       </Button>

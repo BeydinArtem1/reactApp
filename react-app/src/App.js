@@ -19,8 +19,8 @@ const App = () => {
     history.push(`/edit/:_id${item._id}`);
   }
 
-  const goToTask = () => {
-    history.push('/task');
+  const goToMain = () => {
+    history.push('/main');
   }
 
   useEffect(() => {
@@ -45,7 +45,7 @@ const App = () => {
           <InputComponent
             item={item}
             setTasks={setTasks}
-            goToTask={goToTask}
+            goToMain={goToMain}
           />
         </Route>
         <Redirect from="/" to="/main" />
