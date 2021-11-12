@@ -4,8 +4,8 @@ import TextComponent from '../TextComponent/TextComponent';
 import './TaskComponent.scss';
 
 const TaskComponent = ({ setTasks, index, item, goToedit, setItem }) => {
-  const {_id, isCheck} = item
-  const changeCheckbox = async () => {    
+  const { _id, isCheck } = item
+  const changeCheckbox = async () => {
     await axios.patch('http://localhost:8000/updateTask', {
       _id,
       isCheck: !isCheck

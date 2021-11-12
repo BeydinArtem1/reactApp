@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import SaveAltIcon from '@mui/icons-material/SaveAlt';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import './InputComponent.scss';
@@ -46,19 +44,12 @@ const InputComponent = ({ item, setTasks, goToTask }) => {
       >
         Save
       </Button>
-      {/* <SaveAltIcon onClick={() => {
-        saveTask();
-        goToTask();
-      }
-      }
-      /> */}
       <Button
         variant="contained"
         onClick={() => goToTask()}
       >
         Back
       </Button>
-      {/* <ArrowBackIcon onClick={() => goToTask()} /> */}
     </div>)
 }
 
