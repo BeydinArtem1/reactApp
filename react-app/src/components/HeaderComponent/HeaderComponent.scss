@@ -1,14 +1,8 @@
 header {
-  width: 40%;
+  width: 55%;
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
-
-  h1 {
-    color: white;
-    font-family: 'Lobster', cursive;
-    font-size: 3.5em;
-  }
+  flex-direction: column; 
 }
 
 .header {
@@ -17,25 +11,58 @@ header {
   justify-content: space-between;
   margin-bottom: 10px;
 
-  .css-cio0x1-MuiInputBase-root-MuiFilledInput-root {
+  button {
+    text-transform: none;
+    padding: 15px 30px;
+    font-size: 0.96em;
+  }
+
+  input {
     background-color: white;
-   }
-   
-   .css-cio0x1-MuiInputBase-root-MuiFilledInput-root:hover {
+    padding-right: 50px;  
+    width: 35em;
+    border-radius: 5px;
+  }
+
+  input:hover {
     background-color: white;
-    }
-   
-    .css-sghohy-MuiButtonBase-root-MuiButton-root {
-      padding: 15px 30px;
-      font-size: 0.96em;
-    }
-   
-    .css-10botns-MuiInputBase-input-MuiFilledInput-input {
-      padding-right: 50px;      
-    }
-   
-    .css-10botns-MuiInputBase-input-MuiFilledInput-input {
-     width: 25em;
-    }
+  }  
 }
 
+@media (max-width: 1024px) {
+  input {
+    max-width: 20em;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      width: 50%;
+      font-size: 22px;
+      margin: 5px;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  header {
+    width: 80%;
+
+    input {
+      max-width: 15em;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .header {
+    button {
+      width: 61%;
+    }
+  }
+}
